@@ -1,0 +1,20 @@
+---
+networks:
+    mynetwork:
+        driver: overlay
+
+services:
+    staticfileserver:
+        entrypoint: /www/startup.sh
+        environment:
+            MYHOST: 0.0.0.0
+            MYPORT: 3000
+        image: docker.sas.com/risugg/docker-swarm-test:latest
+        networks:
+            - mynetwork
+        expose:
+            - '3000'
+        ports:
+            - '3000:3000'
+
+version: '2'

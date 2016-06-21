@@ -1,0 +1,24 @@
+{
+  "services": {
+    "staticfileserver": {
+      "Command": [
+        "/www/startup.sh"
+      ], 
+      "Env": [
+        "MYPORT=3000", 
+        "MYHOST=0.0.0.0"
+      ], 
+      "Image": "docker.sas.com/risugg/docker-swarm-test@sha256:a94adb65f1021897eaabf2463d6979d242a11212f3e2211b1b268190813c3d41", 
+      "Networks": [
+        "mynetwork"
+      ], 
+      "Ports": [
+        {
+          "Port": 3000, 
+          "Protocol": "tcp"
+        }
+      ]
+    }
+  }, 
+  "version": "0.1"
+}
